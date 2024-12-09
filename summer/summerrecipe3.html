@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Website Header</title>
+    <link rel="stylesheet" href="../styles.css"> <!-- Link to your CSS file -->
+    <link rel="stylesheet" href="forrecipe.css">
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body class="summer-page">
+
+    <!-- Header Section -->
+    <div class="header">
+        <!-- Left Side (Logo) -->
+        <div class="logo-container">
+            <img src="../img/logo2.jpg" alt="Logo" class="logo-image">
+        </div>
+
+        <!-- Centered Title and Navigation -->
+        <div class="center-content">
+            <h1 class="title">Smitten Kitchen</h1>
+            <nav class="navbar">
+                <ul>
+                    <li><a href="../index.html">Home</a></li>
+                    <li><a href="../about.html">About</a></li>
+                    <li class="menu-item">
+                        <a href="recipes.html">Recipes</a>
+                        <ul class="dropdown">
+                            <li><a href="spring.html">Spring</a></li>
+                            <li><a href="../summer/summer.html">Summer</a></li>
+                            <li><a href="../fall/fall.html">Fall</a></li>
+                            <li><a href="../winter/winter.html">Winter</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="../contact.html">Contact</a></li>
+                    <li><a href="../cooking.html">What Am I Cooking Today?</a></li>
+                </ul>
+            </nav>
+        </div>
+
+        <!-- Right Side (Social Media Icons) -->
+        <div class="social-media">
+            <a href="https://www.facebook.com/smittenkitchen" target="_blank">
+                <img src="../img/facebook-logo.png" alt="Facebook" class="social-icon">
+            </a>
+            <a href="https://www.instagram.com/smittenkitchen" target="_blank">
+                <img src="../img/instagram-logo.png" alt="Instagram" class="social-icon">
+            </a>
+            <a href="https://www.youtube.com/smittenkitchening" target="_blank">
+                <img src="../img/youtube-logo.png" alt="YouTube" class="social-icon">
+            </a>
+            <a href="https://www.pinterest.com/smittenkitchen/" target="_blank">
+                <img src="../img/pinterest-logo.png" alt="Pinterest" class="social-icon">
+            </a>
+            <a href="https://x.com/smittenkitchen" target="_blank">
+                <img src="../img/x-logo.png" alt="X" class="social-icon">
+            </a>
+        </div>
+    </div>
+
+    <!-- Main Content Section -->     
+    <div class="content-container">
+        <div class="recipe-instructions">
+            <div class="title-with-button">
+                <h1 class="recipe-title">chickpea pan bagnat</h1>
+                <button class="save-recipe" onclick="saveRecipe()">Save</button>
+            </div>
+            <p>When I was in high school and we were finally allowed to go off-grounds for lunch, we often went to a local deli where my friends would get various sandwiches with turkey, salami, ham, or all of the above, plus, lettuce, tomato, onions, vinegar and oil and I, a vegetarian in a place baffled by this, would get a the same but with cheese instead. I have thought about this sandwich and what it did well — salt, pepper, vinegar, oil, crunch — and what it did poorly — a stack of tasteless sliced deli cheese as filler — for way too long in the years (and decades, sigh) since because I still love a sandwich full of vegetables, but find most vegetable sandwiches very disappointing, either heavy with cheese (and I love cheese, but not, like, an inch of it) or overcooked, under-seasoned vegetables. Why not avocado and crispy kale? Why not hummus, marinated cucumbers and carrots? Why not… make it for yourself, Deb? Which brings us, as ever, back here today.</p>
+            <!-- Add your recipe steps here -->
+        </div>
+    </div> 
+    <script>
+        function saveRecipe() {
+            // Get the recipe title, image URL, and the relative URL of the current page
+            const title = document.querySelector('.recipe-title').innerText;
+            const imageSrc = document.querySelector('.recipe-image').src;
+            const url = window.location.pathname;  // Get the relative URL of the current page
+        
+            // Create a recipe object with title, imageSrc, and relative URL
+            const recipe = { title, imageSrc, url };
+        
+            // Get existing recipes from localStorage
+            let savedRecipes = JSON.parse(localStorage.getItem('savedRecipes')) || [];
+        
+            // Add the new recipe
+            savedRecipes.push(recipe);
+        
+            // Save the updated list back to localStorage
+            localStorage.setItem('savedRecipes', JSON.stringify(savedRecipes));
+        
+            alert('Recipe saved!');
+        }
+    </script>
+      
+    <div class="image-container">
+        <img src="../img/summerrecipe3.webp" alt="Recipe Image" class="recipe-image">
+    </div>
+    <div class="divider-line"></div>
+
+    <!-- Ingredients Section -->
+    <div class="ingredients-container">
+        <h2 class="ingredients-title">INGREDIENTS</h2>
+        <ul class="ingredients-list">
+            <li>1 15-ounce can chickpeas, drained and rinsed</li>
+    <li>2 tablespoons olive oil</li>
+    <li>Zest and juice of half a lemon</li>
+    <li>1 tablespoon chopped flat-leaf parsley</li>
+    <li>1/2 teaspoon kosher salt</li>
+    <li>Pepper flakes, to taste</li>
+    <li>Freshly ground black pepper</li>
+    <li>2 8-inch ciabatta rolls, baguettes, or 1 round pan de champagne</li>
+    <li>Olive oil</li>
+    <li>1/2 small red or white onion, very thinly sliced</li>
+    <li>Red wine vinegar</li>
+    <li>2 hard-boiled eggs, peeled and thinly sliced (optional)</li>
+    <li>Kosher salt and freshly ground black pepper</li>
+    <li>1 to 2 tablespoons capers, drained, chopped if they’re large</li>
+    <li>1/4 cup thinly black olives, Niçoise or oil-cured, pitted or unpitted</li>
+    <li>1 small cucumber, thinly sliced</li>
+    <li>1 to 2 plum tomatoes, thinly sliced</li>
+    <li>A few basil leaves (optional)</li>
+            <!-- Add other ingredients here -->
+        </ul>
+    </div>
+
+    <!-- Another Divider Line -->
+    <div class="divider-line"></div>
+
+    <!-- Additional Recipe Instructions -->
+    <div class="additional-instructions">
+        <p>Very lightly smash the chickpea mixture with the back of a fork or a potato masher. You’re not looking for a hummus-like puree but something closer to a coarse chop with a few smaller bits to hold it together. Add olive oil, lemon zest, juice, and parsley and mix. Season well with salt, pepper, and pepper flakes. Taste and make sure it tastes as good as it should be.</p>
+
+<p>Split your rolls or bread in half and drizzle both sides generously with olive oil. Spoon the smashed chickpeas on the bottom half first, then the onion, and a little drizzle of vinegar. Add eggs, if using, and season this layer with salt and pepper. Add the capers, olives, and cucumber. Add another gentle drizzle of olive oil and a smaller dribble of vinegar, if you wish. Finish with the tomatoes and more salt and pepper on top, then basil, if you’re using it.</p>
+
+<p>Close the sandwich(es) and wrap them in foil. Set a few of your heaviest pans or books on top for 10 minutes — this encourages the ingredients to mingle together and flattens the sandwich enough to ensure that you do not need to unhinge your jaw like a snake to take a bite. Eat right away, or keep wrapped sandwiches in the fridge, a cooler, or picnic basket until needed. I hope it’s soon.</p>
+
+        <footer>
+        <div class="footer-content">
+            <p>&copy; 2024 Smitten Kitchen. All rights reserved.</p>
+        </div>
+        
+    </footer>    
+    
+</body>
+</html>

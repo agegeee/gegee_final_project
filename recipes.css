@@ -1,0 +1,210 @@
+/* General reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Body settings */
+body {
+    font-family: "Times New Roman", Times, serif;
+    height: 100vh; /* Ensure the body takes full height of the viewport */
+    animation: slideshow 20s infinite; /* Add the slideshow animation */
+    background-size: cover; /* Ensures the image fills the screen */
+    background-position: center; /* Keeps the image centered */
+    background-repeat: no-repeat; /* Prevents the background from repeating */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between; /* Distribute space between header, seasons, and footer */
+}
+
+/* Header Styling */
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    position: absolute; /* Fixes header on top of the background */
+    top: 0;
+    width: 100%;
+    z-index: 1; /* Ensures the header stays on top of the background */
+}
+
+.logo-container {
+    flex: 1;
+}
+
+.logo-image {
+    width: 50px; /* Adjust the size of the logo */
+    height: auto;
+}
+
+.center-content {
+    text-align: center;
+    flex: 2;
+}
+
+.title {
+    font-size: 30px; /* Adjust the title size */
+    margin: 0;
+    font-family: 'Cinzel', serif; /* You can adjust the font */
+    color: white; /* This will change the title color to white */
+    margin-bottom: 30px;
+}
+
+.navbar ul {
+    list-style-type: none;
+    margin: 10px 0 0;
+    padding: 0;
+    font-style: 'Times';
+}
+
+.navbar ul li {
+    display: inline;
+    margin: 0 15px; /* Space between links */
+}
+
+.navbar ul li a {
+    text-decoration: none;
+    color: #ffffff; /* Adjust the color of the links */
+    font-size: 18px; /* Adjust the font size */
+}
+
+.social-media {
+    flex: 1;
+    text-align: right;
+}
+
+.social-icon {
+    width: 20px; /* Adjust icon size */
+    height: auto;
+    margin-left: 10px;
+}
+
+/* Main content section (categories) */
+.category-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Center align the categories */
+    gap: 20px; /* Adjust gap between categories */
+    margin-top: 300px; /* Add space from header */
+    position: relative;
+    z-index: 2; /* Keep categories above season titles */
+    flex-grow: 1; /* Allow it to expand and take available space */
+}
+
+.category {
+    font-size: 50px; /* Increase font size */
+    font-weight: bold;
+    text-transform: uppercase;
+    cursor: pointer;
+    padding: 10px 20px; /* Adjust padding */
+    background-color: transparent; /* Remove the background color */
+    border: none; /* Remove any border */
+    color: white; /* Keep the text color dark */
+}
+
+/* Define the slideshow animation */
+@keyframes slideshow {
+    0% { background-image: url('img/spring-image.webp'); }
+    25% { background-image: url('img/summer-image.webp'); }
+    50% { background-image: url('img/fall-image.webp'); }
+    75% { background-image: url('img/winter-image.webp'); }
+    100% { background-image: url('img/spring-image.webp'); } /* Loop back to the start */
+}
+
+.recipe-list li {
+    margin-bottom: 10px;
+}
+
+.category:hover {
+    background-color: rgba(255, 255, 255, 0.7);  /* Change background on hover */
+}
+
+footer {
+    text-align: center;
+    padding: 20px;
+    color: white;
+    margin-top: 50px; /* Space the footer from the seasons */
+    width: 100%;
+}
+
+/* Mobile-specific adjustments */
+
+/* For tablet and smaller devices */
+@media screen and (max-width: 1024px) {
+    .header {
+        flex-direction: column; /* Stack the header elements vertically */
+        align-items: center; /* Center align header content */
+    }
+
+    .navbar ul {
+        display: flex;
+        flex-direction: column; /* Stack navigation links vertically */
+        margin-top: 10px; /* Adjust spacing */
+    }
+
+    .navbar ul li {
+        margin: 10px 0; /* Adjust space between links */
+    }
+
+    .category-container {
+        margin-top: 400px; /* Add space from the header */
+        gap: 15px; /* Reduce gap between categories */
+        z-index: 3;
+        flex-grow: 1; /* Allow the container to take up space */
+    }
+
+    .category {
+        font-size: 40px; /* Reduce font size */
+        padding: 8px 15px; /* Adjust padding */
+    }
+
+    footer {
+        margin-top: 100px; /* Adjust footer position */
+    }
+}
+
+/* For smaller phones */
+@media screen and (max-width: 768px) {
+    .header {
+        padding: 10px;
+    }
+
+    .category-container {
+        margin-top: 400px; /* Adjust margin */
+        gap: 10px; /* Reduce gap */
+        z-index: 2;
+        flex-grow: 1; /* Ensure it grows to take the remaining space */
+    }
+
+    .category {
+        font-size: 35px;
+    }
+
+    footer {
+        margin-top: 50px; /* Adjust footer space */
+    }
+}
+
+/* For very small phones */
+@media screen and (max-width: 480px) {
+    .header {
+        padding: 5px;
+    }
+
+    .category-container {
+        margin-top: 400px; /* Adjust margin for small screens */
+        z-index: 2;
+        flex-grow: 1;
+    }
+
+    .category {
+        font-size: 30px;
+        padding: 5px 10px;
+    }
+
+    footer {
+        margin-top: 30px; /* Adjust footer space */
+    }
+}

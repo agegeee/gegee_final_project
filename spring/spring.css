@@ -1,0 +1,217 @@
+/* Content-specific styles for spring.html */
+
+/* Container for Text and Image */
+.content-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: calc(100vh - 400px); /* Adjusting for header and footer height */
+    padding: 20px;
+    flex-wrap: wrap; /* Allows items to wrap on smaller screens */
+}
+
+/* Text Content Styles */
+.text-content {
+    width: 60%; /* Takes 60% of the container */
+}
+
+.small-title {
+    font-size: 20px;
+    font-weight: bold;
+    margin-bottom: 10px;
+    color: white;
+    font-family: 'Cinzel', serif;
+    margin-left: 70px;
+}
+
+.main-text {
+    font-size: 45px;
+    line-height: 1.6;
+    color: white;
+    font-family: 'Cinzel', serif;
+    margin-left: 70px;
+}
+
+/* Image Container */
+.image-container {
+    width: 30%; /* Takes 40% of the container */
+    text-align: center;
+    margin-right: 70px;
+}
+
+.spring-image {
+    max-width: 100%;
+    height: auto;
+    border-radius: 10px; /* Optional rounded corners */
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2); /* Optional shadow */
+}
+
+.content-divider {
+    border: 0;
+    border-top: 2px solid #ccc;
+    margin: 20px auto; /* Centers the line horizontally */
+    width: 90%; /* Makes the line span 90% of the screen width */
+}
+
+/* Flexbox for columns */
+.columns-container {
+    display: flex;
+    justify-content: space-between; /* Evenly distribute space */
+    margin-top: 20px;
+    margin-left: 80px;
+    margin-bottom: 150px;
+    flex-wrap: wrap; /* Allow wrapping on smaller screens */
+}
+
+.column {
+    flex: 1; /* Ensure columns take equal space */
+    margin: 0 10px; /* Add spacing between columns */
+}
+
+.column ul {
+    list-style: none; /* Remove bullets */
+    padding: 0;
+}
+
+.column ul li {
+    margin: 5px 0; /* Add spacing between items */
+    text-align: left; /* Align text to the left */
+    font-size: 20px;
+    line-height: 1;
+    color: white;
+    font-family: 'Cinzel', serif;
+}
+
+/* Recipe Container to hold all recipe images */
+.recipe-container {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+    margin: 20px 5%;
+    padding: 0 20px;
+    flex-wrap: wrap; /* Allow wrapping of recipe items */
+}
+
+/* Styling for each individual recipe */
+.recipe {
+    width: 30%;
+    position: relative;
+    text-align: left;
+    margin-bottom: 20px; /* Space at the bottom of each recipe */
+}
+
+/* Styling for the images */
+.recipe-img {
+    width: 100%;
+    height: auto;
+}
+
+.recipe a {
+    text-decoration: none; /* Removes underline from links */
+    color: inherit; /* Ensures the text color is inherited from the parent element */
+}
+
+.recipe-title {
+    margin-top: 10px;
+    color: white;
+    font-size: 25px;
+    font-weight: 200;
+    font-family: "Times New Roman", Times, serif;
+}
+/* Target only the spring.html page */
+.spring-page .header{
+    background-color: #0a260a; /* Example: Light blue background */
+}
+/* Example if you added a body class for spring.html */
+body.spring-page {
+    background-color: #0a260a; /* Forest Green */
+}
+
+
+/* Media Queries for responsiveness */
+
+/* For tablet and smaller devices */
+@media screen and (max-width: 1024px) {
+    .content-container {
+        flex-direction: column; /* Stack text and image */
+        justify-content: center; /* Center content vertically */
+    }
+
+    .text-content, .image-container {
+        width: 100%; /* Full width for both text and image */
+        margin-left: 0;
+    }
+
+    .image-container {
+        margin-bottom: 20px; /* Space between text and image */
+    }
+
+    .columns-container {
+        margin-left: 10px; /* Adjust left margin for smaller screens */
+    }
+
+    .column {
+        width: 100%; /* Full width for each column */
+        margin-bottom: 10px; /* Space between columns */
+    }
+
+    .recipe {
+        width: 45%; /* Adjust recipe width for smaller devices */
+    }
+
+    .recipe-title {
+        font-size: 20px; /* Smaller title font */
+    }
+}
+
+/* For smaller phones */
+@media screen and (max-width: 768px) {
+    .content-container {
+        flex-direction: column;
+        align-items: center;
+        padding: 10px;
+    }
+
+    .text-content, .image-container {
+        width: 100%;
+        margin-left: 0;
+    }
+
+    .columns-container {
+        margin-left: 0; /* Remove left margin for smaller screens */
+    }
+
+    .recipe-container {
+        flex-direction: column; /* Stack recipes vertically */
+        margin: 0; /* Remove margins on mobile */
+    }
+
+    .recipe {
+        width: 100%; /* Full width for each recipe */
+        margin-bottom: 15px;
+    }
+
+    .recipe-title {
+        font-size: 18px; /* Further reduce font size */
+    }
+
+    .main-text {
+        font-size: 30px; /* Smaller font size for main text */
+        line-height: 1.4; /* Adjust line height for smaller text */
+    }
+
+    .small-title {
+        font-size: 18px; /* Adjust size of small title */
+    }
+}
+
+/* For very small phones */
+@media screen and (max-width: 480px) {
+    .main-text {
+        font-size: 24px; /* Smaller main text */
+    }
+
+    .recipe-title {
+        font-size: 16px; /* Even smaller recipe title font */
+    }
+}

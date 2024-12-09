@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Website Header</title>
+    <link rel="stylesheet" href="../styles.css"> <!-- Link to your CSS file -->
+    <link rel="stylesheet" href="forrecipe.css">
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body class="fall-page">
+
+    <!-- Header Section -->
+    <div class="header">
+        <!-- Left Side (Logo) -->
+        <div class="logo-container">
+            <img src="../img/logo2.jpg" alt="Logo" class="logo-image">
+        </div>
+
+        <!-- Centered Title and Navigation -->
+        <div class="center-content">
+            <h1 class="title">Smitten Kitchen</h1>
+            <nav class="navbar">
+                <ul>
+                    <li><a href="../index.html">Home</a></li>
+                    <li><a href="../about.html">About</a></li>
+                    <li class="menu-item">
+                        <a href="recipes.html">Recipes</a>
+                        <ul class="dropdown">
+                            <li><a href="spring.html">Spring</a></li>
+                            <li><a href="../summer/summer.html">Summer</a></li>
+                            <li><a href="../fall/fall.html">Fall</a></li>
+                            <li><a href="../winter/winter.html">Winter</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="../contact.html">Contact</a></li>
+                    <li><a href="../cooking.html">What Am I Cooking Today?</a></li>
+                </ul>
+            </nav>
+        </div>
+
+        <!-- Right Side (Social Media Icons) -->
+        <div class="social-media">
+            <a href="https://www.facebook.com/smittenkitchen" target="_blank">
+                <img src="../img/facebook-logo.png" alt="Facebook" class="social-icon">
+            </a>
+            <a href="https://www.instagram.com/smittenkitchen" target="_blank">
+                <img src="../img/instagram-logo.png" alt="Instagram" class="social-icon">
+            </a>
+            <a href="https://www.youtube.com/smittenkitchening" target="_blank">
+                <img src="../img/youtube-logo.png" alt="YouTube" class="social-icon">
+            </a>
+            <a href="https://www.pinterest.com/smittenkitchen/" target="_blank">
+                <img src="../img/pinterest-logo.png" alt="Pinterest" class="social-icon">
+            </a>
+            <a href="https://x.com/smittenkitchen" target="_blank">
+                <img src="../img/x-logo.png" alt="X" class="social-icon">
+            </a>
+        </div>
+    </div>
+
+    <!-- Main Content Section -->     
+    <div class="content-container">
+        <div class="recipe-instructions">
+            <div class="title-with-button">
+                <h1 class="recipe-title">Chicken curry</h1>
+                <button class="save-recipe" onclick="saveRecipe()">Save</button>
+            </div>
+            <p>In February, I fell into an I Miss GBBO rabbit hole (my interest waned when Mel, Sue and Mary Berry left, although perhaps it’s my loss) and found myself on Chetna Makan, the talented semifinalist from the 2014 season’s YouTube page, watching her make her mom’s chicken curry. It looked absolutely amazing. I watched the video, “BEST Chicken Curry recipe!” three times, and, having failed to find the recipe online or in her cookbooks, did that thing I imagine we had to in the pre-internet era of food television: wrote down the recipe from what she was saying. My kids were in the backseat and I kept saying “shh! I need to hear what spice this is!” (I’m fun.)</p>
+        </div>
+    </div> 
+    <script>
+        function saveRecipe() {
+            // Get the recipe title, image URL, and the relative URL of the current page
+            const title = document.querySelector('.recipe-title').innerText;
+            const imageSrc = document.querySelector('.recipe-image').src;
+            const url = window.location.pathname;  // Get the relative URL of the current page
+        
+            // Create a recipe object with title, imageSrc, and relative URL
+            const recipe = { title, imageSrc, url };
+        
+            // Get existing recipes from localStorage
+            let savedRecipes = JSON.parse(localStorage.getItem('savedRecipes')) || [];
+        
+            // Add the new recipe
+            savedRecipes.push(recipe);
+        
+            // Save the updated list back to localStorage
+            localStorage.setItem('savedRecipes', JSON.stringify(savedRecipes));
+        
+            alert('Recipe saved!');
+        }
+    </script>
+      
+    <div class="image-container">
+        <img src="../img/fallrecipe2.webp" alt="Recipe Image" class="recipe-image">
+    </div>
+    <div class="divider-line"></div>
+
+    <!-- Ingredients Section -->
+    <div class="ingredients-container">
+        <h2 class="ingredients-title">INGREDIENTS</h2>
+        <ul class="ingredients-list">
+            <li>2 1/4 pounds boneless, skinless chicken thighs, cut into 2-inch pieces</li>
+    <li>1 cup plain, full-fat yogurt (Greek works well, and 2% Greek yogurt works too)</li>
+    <li>4 garlic cloves, minced or grated, divided</li>
+    <li>2-inch piece of ginger, minced or grated, divided</li>
+    <li>2 teaspoons kosher salt, divided, plus more to taste</li>
+    <li>2 to 3 tablespoons neutral oil or ghee</li>
+    <li>2 large yellow onions, minced</li>
+    <li>1 teaspoon cumin seeds</li>
+    <li>About 2 1/2 cups small diced fresh tomatoes, from 3 to 4 roma tomatoes, or 1 15-ounce can crushed tomatoes</li>
+    <li>2 tablespoons tomato paste</li>
+    <li>1 1/2 teaspoons ground turmeric</li>
+    <li>1 teaspoon garam masala</li>
+    <li>1 tablespoon ground coriander</li>
+    <li>1/2 to 1 teaspoon cayenne or a mild chile powder, such as kashmiri, or to taste</li>
+    <li>1/2 cup water</li>
+            <!-- Add other ingredients here -->
+        </ul>
+    </div>
+
+    <!-- Another Divider Line -->
+    <div class="divider-line"></div>
+
+    <!-- Additional Recipe Instructions -->
+    <div class="additional-instructions">
+        <p>Combine the chicken thighs with yogurt, half of the garlic, ginger, and salt in a bowl. Set aside to marinate for as long as possible—whether that's right away, an hour, or even up to a day. The longer it sits, the more flavor it absorbs.</p>
+
+<p>In a large (4-quart) heavy pan with a lid, heat the oil or ghee. Once hot, add the onions and cumin seeds. Cook for about 5 minutes until the onions are browned at the edges. Add the remaining garlic and ginger, cooking for another 1 to 2 minutes. Then, add the remaining salt, turmeric, garam masala, coriander, and cayenne or other chile powder. Let the mixture cook for 2 minutes before adding the fresh tomatoes. Cook the tomatoes until they start to break down, which should take about 4 minutes. Stir in the tomato paste and cook for another 2 minutes.</p>
+
+<p>Add the chicken and its yogurt marinade from the bowl, along with water. Stir everything to combine and bring the mixture to a simmer. Let it cook for 25 to 30 minutes over low heat, covered, stirring once or twice to ensure everything cooks evenly. The chicken is done when it's cooked through and very tender. Check doneness by cutting a larger piece of chicken in half. Adjust the seasoning if needed and serve with rice.</p>
+
+<p><strong>Notes:</strong></p>
+
+<p>- In the video, Chetna Makan uses a whole chicken that’s been skinned and cut into chunks. While I opted for boneless chicken thighs for quicker prep, using bone-in chicken may provide a deeper flavor.</p>
+
+<p>- Regarding fresh tomatoes: I used to be skeptical of fresh tomatoes in Indian dishes, especially when they're out of season, but Priya Krishna's <em>Indian-ish</em> cookbook convinced me otherwise. Even firm, unjuicy tomatoes add a nice complexity when cooked.</p>
+
+<p>- If you're looking to remove dairy, you can marinate the chicken in full-fat coconut milk for a similarly delicious result.</p>
+
+<p>- If you prefer using an Instant Pot, you can cook the chicken on high for 7 minutes. While the IP saves time compared to simmering on the stove, the hands-off nature of the Instant Pot makes it a worthwhile option.</p>
+
+<p>- About the name change: Makan called this recipe "chicken curry," but I initially renamed it "chicken tikka masala." After receiving feedback from readers, I changed it back to its original name, as this isn't actually chicken tikka masala.</p>
+
+<p>- I use a Staub 4-quart braiser pot, and the rice is golden sella basmati rice from Kalustyan’s.</p>
+
+
+        <footer>
+        <div class="footer-content">
+            <p>&copy; 2024 Smitten Kitchen. All rights reserved.</p>
+        </div>
+        
+    </footer>    
+    
+</body>
+</html>

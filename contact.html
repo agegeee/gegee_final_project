@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Website Header</title>
+    <link rel="stylesheet" href="styles.css"> <!-- Link to your CSS file -->
+    <link rel="stylesheet" href="contact.css"> <!-- Link to your CSS file -->
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <!-- Header Section -->
+    <div class="header">
+        <!-- Left Side (Logo) -->
+        <div class="logo-container">
+            <img src="img/logo2.jpg" alt="Logo" class="logo-image">
+        </div>
+
+        <!-- Centered Title and Navigation -->
+        <div class="center-content">
+            <h1 class="title">Smitten Kitchen</h1>
+            <nav class="navbar">
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li class="menu-item">
+                        <a href="recipes.html">Recipes</a>
+                        <ul class="dropdown">
+                            <li><a href="spring/spring.html">Spring</a></li>
+                            <li><a href="summer/summer.html">Summer</a></li>
+                            <li><a href="fall/fall.html">Fall</a></li>
+                            <li><a href="winter/winter.html">Winter</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="contact.html">Contact</a></li>
+                    <li><a href="cooking.html">What Am I Cooking Today?</a></li>
+                </ul>
+            </nav>
+        </div>
+
+        <!-- Right Side (Social Media Icons) -->
+        <div class="social-media">
+            <a href="https://www.facebook.com/smittenkitchen" target="_blank">
+                <img src="img/facebook-logo.png" alt="Facebook" class="social-icon">
+            </a>
+            <a href="https://www.instagram.com/smittenkitchen" target="_blank">
+                <img src="img/instagram-logo.png" alt="Instagram" class="social-icon">
+            </a>
+            <a href="https://www.youtube.com/smittenkitchening" target="_blank">
+                <img src="img/youtube-logo.png" alt="YouTube" class="social-icon">
+            </a>
+            <a href="https://www.pinterest.com/smittenkitchen/" target="_blank">
+                <img src="img/pinterest-logo.png" alt="Pinterest" class="social-icon">
+            </a>
+            <a href="https://x.com/smittenkitchen" target="_blank">
+                <img src="img/x-logo.png" alt="X" class="social-icon">
+            </a>
+        </div>
+    </div>
+
+    <!-- Main Content Section -->
+    <section class="contact-section">
+        <h3>Contact Form:</h3>
+        <p>If you prefer to send a message directly, please fill out the form below:</p>
+
+        <form action="submit_form.php" method="post">
+            <label for="first-name">First Name:</label>
+            <input type="text" id="first-name" name="first-name" required>
+            
+            <label for="last-name">Last Name:</label>
+            <input type="text" id="last-name" name="last-name" required>
+            
+            <label for="email">Email Address:</label>
+            <input type="email" id="email" name="email" required>
+            
+            <label for="subject">Subject:</label>
+            <input type="text" id="subject" name="subject" required>
+            
+            <label for="message">Your Message:</label>
+            <textarea id="message" name="message" rows="4" required></textarea>
+            
+            <button type="submit">Send Message</button>
+        </form>
+        <h2>Contact Us</h2>
+        <p>We’d love to hear from you! Whether you have questions about our recipes, feedback on the site, or just want to say hello, feel free to reach out to us.</p>
+
+        <h3>General Questions:</h3>
+        <p>If you have a quick question that needs a quick answer, check out our <a href="faq.html">FAQ page</a>—I might have already answered it. If not, use the contact form below to reach me directly, or email me at <a href="mailto:deb@smittenkitchen.com">deb@smittenkitchen.com</a>. Please note that response times may be slow, as I go through a lot of emails.</p>
+
+        <h3>Recipe Questions:</h3>
+        <p>If you have a recipe-related question, please leave your comment on the post that it relates to. I respond to almost all questions posted in the comments within 24 hours. However, email responses can take weeks.</p>
+
+        <h3>Ad Inquiries:</h3>
+        <p>For any advertising inquiries, please contact <a href="mailto:advertisers@hashtag-labs.com">advertisers@hashtag-labs.com</a>.</p>
+
+        <h3>PR & Media Inquiries:</h3>
+        <ul>
+            <li><strong>Cookbook publicity (U.S.):</strong> Sarah New at <a href="mailto:snew@penguinrandomhouse.com">snew@penguinrandomhouse.com</a></li>
+            <li><strong>Cookbook publicity (Canada):</strong> Trish Bunnett at <a href="mailto:tbunnett@penguinrandomhouse.com">tbunnett@penguinrandomhouse.com</a></li>
+            <li><strong>Cookbook publicity (U.K. & Australia):</strong> Fiona Murphy at <a href="mailto:fmurphy@randomhouse.co.uk">fmurphy@randomhouse.co.uk</a></li>
+            <li><strong>Literary Projects:</strong> Alison Fargis at <a href="mailto:afargis@stonesong.com">afargis@stonesong.com</a></li>
+            <li><strong>Speaking Engagements:</strong> Madeleine Denman at <a href="mailto:speakers@penguinrandomhouse.com">speakers@penguinrandomhouse.com</a></li>
+        </ul>
+
+        <h3>Products, Giveaways, Freebies, Promotions:</h3>
+        <p>Smitten Kitchen is a sponsored endorsement-free zone, and I do not accept product promotions or partnerships.</p>
+
+        <h3>Snail Mail:</h3>
+        <p>If you'd like to send something by mail, please avoid sending fresh food products. I’m still recovering from the time I found liquefied avocados in a bag!</p>
+        <address>
+            Deb Perelman <br>
+            c/o Smitten Kitchen, LLC <br>
+            P.O. Box #1263 <br>
+            Cooper Station <br>
+            New York, NY 10003
+        </address>
+
+        <h3>Missed Emails:</h3>
+        <p>If you’ve emailed me in the past and I didn’t respond, please forgive me! My inbox can get backlogged. Feel free to email me again—I’d love to hear from you.</p>
+
+    </section>
+
+    <footer>
+        <div class="footer-content">
+            <p>&copy; 2024 Smitten Kitchen. All rights reserved.</p>
+        </div>
+    </footer>    
+    
+</body>
+</html>

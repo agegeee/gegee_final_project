@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Website Header</title>
+    <link rel="stylesheet" href="../styles.css"> <!-- Link to your CSS file -->
+    <link rel="stylesheet" href="forrecipe.css">
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body class="spring-page">
+
+    <!-- Header Section -->
+    <div class="header">
+        <!-- Left Side (Logo) -->
+        <div class="logo-container">
+            <img src="../img/logo2.jpg" alt="Logo" class="logo-image">
+        </div>
+
+        <!-- Centered Title and Navigation -->
+        <div class="center-content">
+            <h1 class="title">Smitten Kitchen</h1>
+            <nav class="navbar">
+                <ul>
+                    <li><a href="../index.html">Home</a></li>
+                    <li><a href="../about.html">About</a></li>
+                    <li class="menu-item">
+                        <a href="recipes.html">Recipes</a>
+                        <ul class="dropdown">
+                            <li><a href="spring.html">Spring</a></li>
+                            <li><a href="../summer/summer.html">Summer</a></li>
+                            <li><a href="../fall/fall.html">Fall</a></li>
+                            <li><a href="../winter/winter.html">Winter</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="../contact.html">Contact</a></li>
+                    <li><a href="../cooking.html">What Am I Cooking Today?</a></li>
+                </ul>
+            </nav>
+        </div>
+
+        <!-- Right Side (Social Media Icons) -->
+        <div class="social-media">
+            <a href="https://www.facebook.com/smittenkitchen" target="_blank">
+                <img src="../img/facebook-logo.png" alt="Facebook" class="social-icon">
+            </a>
+            <a href="https://www.instagram.com/smittenkitchen" target="_blank">
+                <img src="../img/instagram-logo.png" alt="Instagram" class="social-icon">
+            </a>
+            <a href="https://www.youtube.com/smittenkitchening" target="_blank">
+                <img src="../img/youtube-logo.png" alt="YouTube" class="social-icon">
+            </a>
+            <a href="https://www.pinterest.com/smittenkitchen/" target="_blank">
+                <img src="../img/pinterest-logo.png" alt="Pinterest" class="social-icon">
+            </a>
+            <a href="https://x.com/smittenkitchen" target="_blank">
+                <img src="../img/x-logo.png" alt="X" class="social-icon">
+            </a>
+        </div>
+    </div>
+
+    <!-- Main Content Section -->
+    <div class="content-container">
+        <div class="recipe-instructions">
+            <div class="title-with-button">
+                <h1 class="recipe-title">Lemon cream meringues</h1>
+                <button class="save-recipe" onclick="saveRecipe()">Save</button>
+            </div>
+            <p>I don’t trust anyone who doesn’t like lemon curd. You, in turn, might choose not to trust anyone who makes bold, sweeping, and questionably necessary proclamations, but if I were to pick a completely superfluous soapbox to stand on, it’s currently this. Everyone loves lemon curd. The only thing better than lemon curd is lemon curd against a pillowy meringue and a plume of softly whipped cream. These three flavors together are the basis of so many desserts, including a chaotic one I call a Lemon Meringue Pie Smash in my second cookbook. It was while working on this recipe that I got my go-to lemon curd down to a simple formula that never fails, and also came to appreciate the culinary harmony of a dessert that doesn’t leave us with leftover stray egg whites or yolks.</p>
+            <!-- Add your recipe steps here -->
+        </div>
+    </div>
+    <script>
+        function saveRecipe() {
+            // Get the recipe title, image URL, and the relative URL of the current page
+            const title = document.querySelector('.recipe-title').innerText;
+            const imageSrc = document.querySelector('.recipe-image').src;
+            const url = window.location.pathname;  // Get the relative URL of the current page
+        
+            // Create a recipe object with title, imageSrc, and relative URL
+            const recipe = { title, imageSrc, url };
+        
+            // Get existing recipes from localStorage
+            let savedRecipes = JSON.parse(localStorage.getItem('savedRecipes')) || [];
+        
+            // Add the new recipe
+            savedRecipes.push(recipe);
+        
+            // Save the updated list back to localStorage
+            localStorage.setItem('savedRecipes', JSON.stringify(savedRecipes));
+        
+            alert('Recipe saved!');
+        }
+    </script>
+       
+    <div class="image-container">
+        <img src="../img/springrecipe2.webp" alt="Recipe Image" class="recipe-image">
+    </div>
+    <div class="divider-line"></div>
+
+    <!-- Ingredients Section -->
+    <div class="ingredients-container">
+        <h2 class="ingredients-title">INGREDIENTS</h2>
+        <ul class="ingredients-list">
+            <li>4 large egg whites</li>
+            <li>Two pinches of salt</li>
+            <li>1 cup (200 grams) granulated sugar</li>
+            <li>1 teaspoon white vinegar</li>
+            <li>1 1/2 teaspoons vanilla extract</li>
+            <li>1 1/2 teaspoons cornstarch, potato starch or arrowroot powder</li>
+            <li>1 cup (225 grams) heavy or whipping cream</li>
+            <li>1 1/2 teaspoons vanilla extract</li>
+            <li>2 tablespoons (30 grams) sour cream or crème fraîche</li>
+            <li>2 tablespoons (25 grams) granulated sugar, or more to taste</li>
+            <li>Fresh berries and/or powdered sugar, if you wish</li>
+            <li>1 cup (225 grams) heavy or whipping cream</li>
+            <li>1 1/2 teaspoons vanilla extract</li>
+            <li>2 tablespoons (30 grams) sour cream or crème fraîche</li>
+            <li>2 tablespoons (25 grams) granulated sugar, or more to taste</li>
+            <li>Fresh berries and/or powdered sugar, if you wish</li>
+        </ul>        
+    </div>
+
+    <!-- Another Divider Line -->
+    <div class="divider-line"></div>
+
+    <!-- Additional Recipe Instructions -->
+    <div class="additional-instructions">
+        <p>
+            Heat oven to 250°F. Line two large baking sheets with parchment paper.<br>
+            In a small bowl, combine the salt, sugar, and cornstarch. In the large bowl of a stand mixer fitted with the whisk attachment, or with a hand mixer, beat the egg whites on medium/low speed until they begin to thicken — they’ll look satiny and you’ll see some trails form from the beaters. Increase the speed to medium, and sprinkle the sugar-cornstarch mixture a small amount at a time with the machine running, letting it fully disappear into the egg whites for 10 to 20 seconds before adding more. Beat for another minute or two once added, then add vinegar and vanilla. Continue to whip the mixture until the egg whites are glossy, and stiff peaks form when the whisk is lifted. I do this on a lower speed than others because I find it makes a more thick, stable meringue.
+        </p><br>
+    
+        <p>
+            Scoop meringue batter in generous 1/4-cup dollops evenly spaced over the two prepared trays. You should have 12. Use the back of a soup spoon to create a swooshed indentation in the center of each, perfect for puddling lemon curd. Transfer pans to the oven and bake for 35 to 45 minutes, rotating the pans once halfway for even cooking. If they seem to be browning, reduce the heat to 225 for the remaining baking time. I find that home ovens can be very inconsistent at lower temperatures so here’s what we’re looking for when they’re done: The meringues should feel firm and dry, but if pressed in the center (gently!), there should be a suggestion of softness inside. They should be easy to lift off the parchment. Turn the oven off and let them cool the rest of the way (or at least 1 hour) inside.
+        </p><br>
+    
+        <p>
+            Place the sugar in a heatproof bowl that will fit over a saucepan (double-boiler style), but don’t put it on the stove yet. Finely grate the zest of both lemons into the sugar. Use your fingertips to rub them together to release the most amount of flavor from the peel. Then, add the juice of both lemons and egg yolks and whisk to combine. Set the bowl over an inch of boiling water; the bowl should not touch the water. Cook, stirring, until the mixture begins to gel or thicken until it coats the spoon or whisk (between 170 and 180°); it shouldn’t simmer. Remove from the heat, add butter and stir until it melts, and strain the curd through a fine-mesh sieve. Cover, and let it cool; it will thicken as it does.
+        </p><br>
+    
+        <p>
+            Beat cream at medium speed until it begins to thicken, gradually sprinkle in sugar, whipping until loose peaks form. Add vanilla and sour cream and beat until soft-to-medium peaks form.
+        </p><br>
+    
+        <p>
+            Place one meringue on a plate and spoon a tablespoon of lemon curd on top. Dollop with whipped cream. Finish with powdered sugar, if you wish, or berries.
+        </p><br>
+    
+        <p>
+            I usually make the meringues the day before or the morning of the evening I’ll need them. I usually make the lemon curd while I’m at it; it keeps for up to 1 week in the fridge. I find that I can make the whipped cream (the sour cream or crème fraîche acts as a stabilizer) and store it in a covered container or jar, and the next day it’s still 95% to 99% which is good enough for me and more than good enough for dolloping.
+        </p><br>
+    
+        <p>
+            While these are SK recipes, I enjoyed visual inspiration both from A Cozy Kitchen’s stunning Meringues with Citrus Curd and Fruit, as well as Susan Spungen’s Mini Pavlovas with Lemon Curd and Crushed Pistachios, and bet you will too.
+        </p>
+    </div>  
+
+    <footer>
+        <div class="footer-content">
+            <p>&copy; 2024 Smitten Kitchen. All rights reserved.</p>
+        </div>
+    </footer>    
+    
+</body>
+</html>

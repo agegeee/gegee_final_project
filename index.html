@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Website Header</title>
+    <link rel="stylesheet" href="styles.css"> <!-- Link to your CSS file -->
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <!-- Header Section -->
+    <div class="header">
+        <!-- Left Side (Logo) -->
+        <div class="logo-container">
+            <img src="img/logo2.jpg" alt="Logo" class="logo-image">
+        </div>
+
+        <!-- Centered Title and Navigation -->
+        <div class="center-content">
+            <h1 class="title">Smitten Kitchen</h1>
+            <nav class="navbar">
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li class="menu-item">
+                        <a href="recipes.html">Recipes</a>
+                        <ul class="dropdown">
+                            <li><a href="spring/spring.html">Spring</a></li>
+                            <li><a href="summer/summer.html">Summer</a></li>
+                            <li><a href="fall/fall.html">Fall</a></li>
+                            <li><a href="winter/winter.html">Winter</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="contact.html">Contact</a></li>
+                    <li><a href="cooking.html">What Am I Cooking Today?</a></li>
+                </ul>
+            </nav>
+        </div>
+
+        <!-- Right Side (Social Media Icons) -->
+        <div class="social-media">
+            <a href="https://www.facebook.com/smittenkitchen" target="_blank">
+                <img src="img/facebook-logo.png" alt="Facebook" class="social-icon">
+            </a>
+            <a href="https://www.instagram.com/smittenkitchen" target="_blank">
+                <img src="img/instagram-logo.png" alt="Instagram" class="social-icon">
+            </a>
+            <a href="https://www.youtube.com/smittenkitchening" target="_blank">
+                <img src="img/youtube-logo.png" alt="YouTube" class="social-icon">
+            </a>
+            <a href="https://www.pinterest.com/smittenkitchen/" target="_blank">
+                <img src="img/pinterest-logo.png" alt="Pinterest" class="social-icon">
+            </a>
+            <a href="https://x.com/smittenkitchen" target="_blank">
+                <img src="img/x-logo.png" alt="X" class="social-icon">
+            </a>
+        </div>
+    </div>
+
+    <!-- Main Content Section -->
+    <div class="main-content">
+        <!-- Quote Section -->
+        <div class="quote-section">
+            <blockquote>
+                "Fearless cooking from a tiny kitchen in New York city."
+            </blockquote>
+        </div>
+        <!-- Background Image -->
+        <div class="background-image">
+            <img src="img/DebPerelman.jpg" alt="Background" class="bg-image">
+        </div>
+    </div>
+      
+    <section class="random-recipe-section">
+        <h3>Random Recipe</h3>
+        <button id="random-recipe-btn">Get Random Recipe</button>
+        <div id="recipe-container">
+            <img id="recipe-image" src="" alt="Recipe Image" style="display:none;">
+            <p id="recipe-name"></p>
+            <a id="recipe-link" href="" target="_blank" style="display:none;">View Recipe</a>
+        </div>
+    </section>
+
+    <!-- JavaScript section (Place this script tag just before the closing </body> tag) -->
+    <script>
+        const seasons = ["summer", "spring", "fall", "winter"];
+        const recipesPerSeason = 3; // You have 3 recipes per season
+
+        document.getElementById("random-recipe-btn").addEventListener("click", function() {
+            // Randomly choose a season
+            const season = seasons[Math.floor(Math.random() * seasons.length)];
+            
+            // Randomly choose a recipe number within the chosen season
+            const recipeNumber = Math.floor(Math.random() * recipesPerSeason) + 1;
+            
+            // Construct the recipe HTML file name and image file name
+            const recipeHTML = `${season}recipe${recipeNumber}.html`;
+            const recipeImage = `${season}recipe${recipeNumber}.webp`;
+            
+            // Construct the recipe link (relative to your website's folder structure)
+            const recipeLink = `./${season}/${recipeHTML}`;
+            
+            // Set the recipe name (displayed text), link, and image
+            document.getElementById("recipe-name").innerText = `${season.charAt(0).toUpperCase() + season.slice(1)} Recipe ${recipeNumber}`;
+            document.getElementById("recipe-link").href = recipeLink;
+            document.getElementById("recipe-link").style.display = "inline";
+            document.getElementById("recipe-image").src = `img/${recipeImage}`;
+            document.getElementById("recipe-image").style.display = "block";
+        });
+    </script>
+
+<footer>
+    <div class="footer-content">
+        <p>&copy; 2024 Smitten Kitchen. All rights reserved.</p>
+    </div>
+</footer>  
+
+</body>
+</html>

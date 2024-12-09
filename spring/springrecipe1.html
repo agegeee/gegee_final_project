@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Website Header</title>
+    <link rel="stylesheet" href="../styles.css"> <!-- Link to your CSS file -->
+    <link rel="stylesheet" href="forrecipe.css">
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body class="spring-page">
+
+    <!-- Header Section -->
+    <div class="header">
+        <!-- Left Side (Logo) -->
+        <div class="logo-container">
+            <img src="../img/logo2.jpg" alt="Logo" class="logo-image">
+        </div>
+
+        <!-- Centered Title and Navigation -->
+        <div class="center-content">
+            <h1 class="title">Smitten Kitchen</h1>
+            <nav class="navbar">
+                <ul>
+                    <li><a href="../index.html">Home</a></li>
+                    <li><a href="../about.html">About</a></li>
+                    <li class="menu-item">
+                        <a href="recipes.html">Recipes</a>
+                        <ul class="dropdown">
+                            <li><a href="spring.html">Spring</a></li>
+                            <li><a href="../summer/summer.html">Summer</a></li>
+                            <li><a href="../fall/fall.html">Fall</a></li>
+                            <li><a href="../winter/winter.html">Winter</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="../contact.html">Contact</a></li>
+                    <li><a href="../cooking.html">What Am I Cooking Today?</a></li>
+                </ul>
+            </nav>
+        </div>
+
+        <!-- Right Side (Social Media Icons) -->
+        <div class="social-media">
+            <a href="https://www.facebook.com/smittenkitchen" target="_blank">
+                <img src="../img/facebook-logo.png" alt="Facebook" class="social-icon">
+            </a>
+            <a href="https://www.instagram.com/smittenkitchen" target="_blank">
+                <img src="../img/instagram-logo.png" alt="Instagram" class="social-icon">
+            </a>
+            <a href="https://www.youtube.com/smittenkitchening" target="_blank">
+                <img src="../img/youtube-logo.png" alt="YouTube" class="social-icon">
+            </a>
+            <a href="https://www.pinterest.com/smittenkitchen/" target="_blank">
+                <img src="../img/pinterest-logo.png" alt="Pinterest" class="social-icon">
+            </a>
+            <a href="https://x.com/smittenkitchen" target="_blank">
+                <img src="../img/x-logo.png" alt="X" class="social-icon">
+            </a>
+        </div>
+    </div>
+
+    <!-- Main Content Section -->     
+    <div class="content-container">
+        <div class="recipe-instructions">
+            <div class="title-with-button">
+                <h1 class="recipe-title">Steamed artichokes</h1>
+                <button class="save-recipe" onclick="saveRecipe()">Save</button>
+            </div>
+            <p>
+                Artichokes are my favorite vegetable. My favorite way to eat them is the way I have my whole life: cooked whole, each leaf dipped in a sharp lemony sauce until you get to the heart, whose choke you free with a butter knife then schmear with the sauce like you’re thickly buttering a piece of bread, and eat it while holding the stem like a lollipop, your eyes closed as you absorb the heady bliss of it all. Clearly, it means a lot to me but I’m not sharing a recipe with three words: Just boil them. A few years ago I started steaming artichokes instead of boiling them and found I preferred it — less wet, and seemingly more evenly cooked. But it still didn’t warrant mention here, though, too simple.</p>
+            <!-- Add your recipe steps here -->
+        </div>
+    </div> 
+    <script>
+        function saveRecipe() {
+            // Get the recipe title, image URL, and the relative URL of the current page
+            const title = document.querySelector('.recipe-title').innerText;
+            const imageSrc = document.querySelector('.recipe-image').src;
+            const url = window.location.pathname;  // Get the relative URL of the current page
+        
+            // Create a recipe object with title, imageSrc, and relative URL
+            const recipe = { title, imageSrc, url };
+        
+            // Get existing recipes from localStorage
+            let savedRecipes = JSON.parse(localStorage.getItem('savedRecipes')) || [];
+        
+            // Add the new recipe
+            savedRecipes.push(recipe);
+        
+            // Save the updated list back to localStorage
+            localStorage.setItem('savedRecipes', JSON.stringify(savedRecipes));
+        
+            alert('Recipe saved!');
+        }
+    </script>
+      
+    <div class="image-container">
+        <img src="../img/springrecipe1.webp" alt="Recipe Image" class="recipe-image">
+    </div>
+    <div class="divider-line"></div>
+
+    <!-- Ingredients Section -->
+    <div class="ingredients-container">
+        <h2 class="ingredients-title">INGREDIENTS</h2>
+        <ul class="ingredients-list">
+            <li>2 to 3 full-sized fresh artichokes</li>
+            <li>1 to 2 lemons, halved</li>
+            <li>Salt, freshly ground black pepper</li>
+            <li>A big pat of butter (optional)</li>
+            <li>A few garlic cloves, halved lengthwise (optional)</li>
+            <li>Mayonnaise, for dipping sauce</li>
+            <!-- Add other ingredients here -->
+        </ul>
+    </div>
+
+    <!-- Another Divider Line -->
+    <div class="divider-line"></div>
+
+    <!-- Additional Recipe Instructions -->
+    <div class="additional-instructions">
+        <p>Trim artichokes: Cut the bottom inch of thorny leaves off each artichoke. Remove any small, discolored leaves around the sides and closer to the stem; they’re not going to taste good. Use a vegetable peeler to remove the outer layer of the stem. Cut each artichoke in half through the stem, heart, and leaves. If you’d like, you can rub the cut parts of each artichoke with one lemon half to limit browning.</p>
+        <br>
+        <p>Steam artichokes: Bring a couple inches of water to boil in a large pot with a lid and place a steamer basket [mine looks like this] in the bottom. Add artichokes — don’t worry about whether they’re standing or flopped over. Squeeze the juice of half a lemon over and nestle the empty lemon half in the middle, just for flavor. Cover with a lid and steam artichokes over moderate heat for 25 to 30 minutes, until the tip of a knife inserts easily into the thickest part where the leaves meet the stem.</p>
+        <br>
+        <p>Use tongs to transfer artichokes to a cutting board, and use a spoon or paring knife to remove and discard the fuzzy choke. Your artichokes are now ready to eat, but if you’d like a fancy finish:</p>
+        <br>
+        <p>For a sizzled finish: Heat a large skillet over medium-high heat and add butter and garlic. Once hot, place cut sides of one artichoke in pan and cook until browned and crisp underneath, then transfer to serving platter. Repeat with remaining artichokes. Pour any butter left in pan and the garlic over your artichokes. Season with salt and pepper.</p>
+        <br>
+        <p>To make my favorite artichoke dip: Place a spoonful of mayo (about 1 to 2 tablespoons, start with less) in a bowl and squeeze the juice of half a lemon over. Stir to combine and season well with freshly ground black pepper and a pinch or two of salt. If it needs more lemon — I like it very lemony — squeeze more in. If you’d prefer it creamier, add more mayo.</p>
+        <br>
+        <p>Leftover artichoke halves keep in the fridge for a few days and can be rewarmed in the microwave or the oven, covered so they don’t dry out.</p>
+        <footer>
+        <div class="footer-content">
+            <p>&copy; 2024 Smitten Kitchen. All rights reserved.</p>
+        </div>
+        
+    </footer>    
+    
+</body>
+</html>

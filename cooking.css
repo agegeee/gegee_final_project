@@ -1,0 +1,59 @@
+/* General Styling for Saved Recipes */
+.saved-recipes-container {
+    text-align: center; /* Center the title */
+    margin: 20px auto;
+    padding: 20px; /* Add spacing around the container */
+}
+
+/* Title Styling */
+.saved-recipes-container h1 {
+    font-family: 'Cinzel', serif;
+    font-size: 36px;
+    color: white;
+    margin-bottom: 20px;
+}
+
+/* Recipe Item Styling */
+.recipe-item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: 15px 0;
+    background-color: #1b2230; /* Dark background for the item */
+    padding: 10px;
+    border-radius: 8px; /* Rounded corners */
+    color: white;
+}
+
+/* Recipe Image Styling */
+.recipe-item img {
+    width: 150px; /* Increase the image size */
+    height: auto;
+    margin-right: 15px; /* Spacing between image and text */
+    border-radius: 8px; /* Rounded corners for the image */
+}
+
+/* Recipe Title Styling */
+.recipe-item h2 {
+    font-family: 'Cinzel', serif;
+    font-size: 24px;
+    color: white;
+    margin: 0;
+    flex-grow: 1; /* Ensures the title takes available space */
+    text-align: left; /* Align text to the left */
+}
+
+/* Remove Button Styling */
+.remove-recipe {
+    background-color: #ff4d4d; /* Bright red background */
+    color: white;
+    border: none;
+    padding: 8px 12px;
+    cursor: pointer;
+    border-radius: 5px;
+    font-size: 14px;
+}
+
+.remove-recipe:hover {
+    background-color: #cc0000; /* Darker red on hover */
+}

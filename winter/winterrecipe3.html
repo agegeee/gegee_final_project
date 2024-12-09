@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Website Header</title>
+    <link rel="stylesheet" href="../styles.css"> <!-- Link to your CSS file -->
+    <link rel="stylesheet" href="forrecipe.css">
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body class="winter-page">
+
+    <!-- Header Section -->
+    <div class="header">
+        <!-- Left Side (Logo) -->
+        <div class="logo-container">
+            <img src="../img/logo2.jpg" alt="Logo" class="logo-image">
+        </div>
+
+        <!-- Centered Title and Navigation -->
+        <div class="center-content">
+            <h1 class="title">Smitten Kitchen</h1>
+            <nav class="navbar">
+                <ul>
+                    <li><a href="../index.html">Home</a></li>
+                    <li><a href="../about.html">About</a></li>
+                    <li class="menu-item">
+                        <a href="recipes.html">Recipes</a>
+                        <ul class="dropdown">
+                            <li><a href="spring.html">Spring</a></li>
+                            <li><a href="../summer/summer.html">Summer</a></li>
+                            <li><a href="../fall/fall.html">Fall</a></li>
+                            <li><a href="../winter/winter.html">Winter</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="../contact.html">Contact</a></li>
+                    <li><a href="../cooking.html">What Am I Cooking Today?</a></li>
+                </ul>
+            </nav>
+        </div>
+
+        <!-- Right Side (Social Media Icons) -->
+        <div class="social-media">
+            <a href="https://www.facebook.com/smittenkitchen" target="_blank">
+                <img src="../img/facebook-logo.png" alt="Facebook" class="social-icon">
+            </a>
+            <a href="https://www.instagram.com/smittenkitchen" target="_blank">
+                <img src="../img/instagram-logo.png" alt="Instagram" class="social-icon">
+            </a>
+            <a href="https://www.youtube.com/smittenkitchening" target="_blank">
+                <img src="../img/youtube-logo.png" alt="YouTube" class="social-icon">
+            </a>
+            <a href="https://www.pinterest.com/smittenkitchen/" target="_blank">
+                <img src="../img/pinterest-logo.png" alt="Pinterest" class="social-icon">
+            </a>
+            <a href="https://x.com/smittenkitchen" target="_blank">
+                <img src="../img/x-logo.png" alt="X" class="social-icon">
+            </a>
+        </div>
+    </div>
+
+    <!-- Main Content Section -->     
+    <div class="content-container">
+        <div class="recipe-instructions">
+            <div class="title-with-button">
+                <h1 class="recipe-title">Roasted cabbage with walnuts and parmesan</h1>
+                <button class="save-recipe" onclick="saveRecipe()">Save</button>
+            </div>
+            <p>I began making variations on this dish about a year ago and since then it has become — and I’m sorry, I know how annoying unrelenting, gasping praise of every recipe that crosses your social media threshold can sound, despite feeling certain that here it’s warranted — everything. It’s a warm salad for cold weather. It’s Starter Cabbage for people who are cabbage suspect (savoy is lacier and less heavy than the white/red stuff). It’s a quick vegetable dish that’s not a salad or bland broccoli that my kids, by some rare miracle, agree to (they like the crispy crackly outer leaves). It’s even better from the tray (which keeps it hot) than it is from a plate, which is basically a reward for being as lazy as I prefer to be. With prep and even oven-warming, it takes exactly 20 minutes to make. Finally, it’s the kind of humble, economical dish that feels good at a time of year when we need to shell out for so many extra things.</p>
+        </div>
+    </div> 
+    <script>
+        function saveRecipe() {
+            // Get the recipe title, image URL, and the relative URL of the current page
+            const title = document.querySelector('.recipe-title').innerText;
+            const imageSrc = document.querySelector('.recipe-image').src;
+            const url = window.location.pathname;  // Get the relative URL of the current page
+        
+            // Create a recipe object with title, imageSrc, and relative URL
+            const recipe = { title, imageSrc, url };
+        
+            // Get existing recipes from localStorage
+            let savedRecipes = JSON.parse(localStorage.getItem('savedRecipes')) || [];
+        
+            // Add the new recipe
+            savedRecipes.push(recipe);
+        
+            // Save the updated list back to localStorage
+            localStorage.setItem('savedRecipes', JSON.stringify(savedRecipes));
+        
+            alert('Recipe saved!');
+        }
+    </script>
+      
+    <div class="image-container">
+        <img src="../img/winterrecipe3.webp" alt="Recipe Image" class="recipe-image">
+    </div>
+    <div class="divider-line"></div>
+
+    <!-- Ingredients Section -->
+    <div class="ingredients-container">
+        <h2 class="ingredients-title">INGREDIENTS</h2>
+        <ul class="ingredients-list">
+            <li>1 medium-large (1 3/4 pounds) or two small heads savoy cabbage</li>
+  <li>7 tablespoons extra-virgin olive oil, divided</li>
+  <li>1 teaspoon kosher salt, plus more to taste</li>
+  <li>Freshly ground black pepper</li>
+  <li>Scant 1/2 cup (1.75 ounces) walnut halves and pieces</li>
+  <li>1 large or 2 smaller garlic cloves</li>
+  <li>1 large lemon</li>
+  <li>Red pepper flakes, such as Aleppo (optional)</li>
+  <li>Grated parmesan, to taste</li>
+            <!-- Add other ingredients here -->
+        </ul>
+    </div>
+
+    <!-- Another Divider Line -->
+    <div class="divider-line"></div>
+
+    <!-- Additional Recipe Instructions -->
+    <div class="additional-instructions">
+        <p>Heat oven to 475ºF. Remove any damaged outer leaves of cabbage and cut it into 8 wedges for small ones or 12 for a large one. Coat a large baking sheet with 2 tablespoons olive oil. Arrange cabbage wedges in one layer, drizzling or brushing them with 2 more tablespoons olive oil and sprinkle with 1 teaspoon kosher salt and freshly ground black pepper to taste. Roast for 8 to 10 minutes, until charred underneath (don’t panic if you see a few thin black edges; they’re going to taste amazing). Use a spatula to flip each piece over and roast for 5 more minutes, until the edges of the cabbage are dark brown.</p>
+
+<p>Meanwhile, while cabbage roasts, place nuts on a smaller tray or baking dish and roast them next to the cabbage for 4 to 5 minutes. Remove and scatter them, still hot, onto a cutting board and coarsely chop them. Scoop into a bowl and finely grate the zest of half a lemon and all of the garlic over it. Add remaining 3 tablespoons olive oil to walnuts, a few pinches of salt and red pepper flakes and stir to combine. If you’ve got a couple minutes to let it all infuse as it cools, let it rest. When ready, squeeze the juice of half your lemon in and stir to combine. Adjust flavors to taste, adding more lemon if needed; you want this dressing to be robust.</p>
+
+<p>The moment the cabbage comes out of the oven, spoon the walnut dressing over the wedges. Grate parmesan all over, to taste. Serve immediately, while piping hot. There will be no leftovers.</p>
+
+<p>Tools: This is forever my favorite spatula, and particularly helpful here when you have unwieldy wedges to flip. I prefer a Microplane rasp with more surface area and use this one.</p>
+
+
+        <footer>
+        <div class="footer-content">
+            <p>&copy; 2024 Smitten Kitchen. All rights reserved.</p>
+        </div>
+        
+    </footer>    
+    
+</body>
+</html>

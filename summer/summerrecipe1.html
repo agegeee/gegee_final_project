@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Website Header</title>
+    <link rel="stylesheet" href="../styles.css"> <!-- Link to your CSS file -->
+    <link rel="stylesheet" href="forrecipe.css">
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body class="summer-page">
+
+    <!-- Header Section -->
+    <div class="header">
+        <!-- Left Side (Logo) -->
+        <div class="logo-container">
+            <img src="../img/logo2.jpg" alt="Logo" class="logo-image">
+        </div>
+
+        <!-- Centered Title and Navigation -->
+        <div class="center-content">
+            <h1 class="title">Smitten Kitchen</h1>
+            <nav class="navbar">
+                <ul>
+                    <li><a href="../index.html">Home</a></li>
+                    <li><a href="../about.html">About</a></li>
+                    <li class="menu-item">
+                        <a href="recipes.html">Recipes</a>
+                        <ul class="dropdown">
+                            <li><a href="spring.html">Spring</a></li>
+                            <li><a href="../summer/summer.html">Summer</a></li>
+                            <li><a href="../fall/fall.html">Fall</a></li>
+                            <li><a href="../winter/winter.html">Winter</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="../contact.html">Contact</a></li>
+                    <li><a href="../cooking.html">What Am I Cooking Today?</a></li>
+                </ul>
+            </nav>
+        </div>
+
+        <!-- Right Side (Social Media Icons) -->
+        <div class="social-media">
+            <a href="https://www.facebook.com/smittenkitchen" target="_blank">
+                <img src="../img/facebook-logo.png" alt="Facebook" class="social-icon">
+            </a>
+            <a href="https://www.instagram.com/smittenkitchen" target="_blank">
+                <img src="../img/instagram-logo.png" alt="Instagram" class="social-icon">
+            </a>
+            <a href="https://www.youtube.com/smittenkitchening" target="_blank">
+                <img src="../img/youtube-logo.png" alt="YouTube" class="social-icon">
+            </a>
+            <a href="https://www.pinterest.com/smittenkitchen/" target="_blank">
+                <img src="../img/pinterest-logo.png" alt="Pinterest" class="social-icon">
+            </a>
+            <a href="https://x.com/smittenkitchen" target="_blank">
+                <img src="../img/x-logo.png" alt="X" class="social-icon">
+            </a>
+        </div>
+    </div>
+
+    <!-- Main Content Section -->     
+    <div class="content-container">
+        <div class="recipe-instructions">
+            <div class="title-with-button">
+                <h1 class="recipe-title">summer ricotta with grilled vegetables</h1>
+                <button class="save-recipe" onclick="saveRecipe()">Save</button>
+            </div>
+            <p>Letter of recommendation: Make ricotta this summer. I was originally going to write “Ditch the burrata and make some ricotta this summer,” but neither wish to besmirch burrata nor do I plan to go tomato season without it. Should a burrata tree (it grows on trees, or must based on the frequency in which it appears) spontaneously appear on my terrace, I will be the happiest and most popular girl in all of the Lower East Side this summer. But since like most of us, I’m still buying it at stores where it’s quite expensive, spoils quickly, and is only sometimes spectacular, I’m here to make the argument that homemade ricotta is not only rich, delicious, and a cinch to make, but that in almost all of the places we’re serving burrata, ricotta* would be deliciously welcome too.
+
+            </p><!-- Add your recipe steps here -->
+        </div>
+    </div> 
+    <script>
+        function saveRecipe() {
+            // Get the recipe title, image URL, and the relative URL of the current page
+            const title = document.querySelector('.recipe-title').innerText;
+            const imageSrc = document.querySelector('.recipe-image').src;
+            const url = window.location.pathname;  // Get the relative URL of the current page
+        
+            // Create a recipe object with title, imageSrc, and relative URL
+            const recipe = { title, imageSrc, url };
+        
+            // Get existing recipes from localStorage
+            let savedRecipes = JSON.parse(localStorage.getItem('savedRecipes')) || [];
+        
+            // Add the new recipe
+            savedRecipes.push(recipe);
+        
+            // Save the updated list back to localStorage
+            localStorage.setItem('savedRecipes', JSON.stringify(savedRecipes));
+        
+            alert('Recipe saved!');
+        }
+    </script>
+     
+    <div class="image-container">
+        <img src="../img/summerrecipe1.webp" alt="Recipe Image" class="recipe-image">
+    </div>
+    <div class="divider-line"></div>
+
+    <!-- Ingredients Section -->
+    <div class="ingredients-container">
+        <h2 class="ingredients-title">INGREDIENTS</h2>
+        <ul class="ingredients-list">
+            <li>4 cups (910 grams) whole milk</li>
+    <li>1/4 cup (55 grams) heavy cream</li>
+    <li>1/2 teaspoon kosher salt</li>
+    <li>3 tablespoons (45 grams) freshly squeezed lemon juice</li>
+    <li>1 pound (455 grams) mixed summer vegetables, thinly sliced</li>
+    <li>8 slices from a large sourdough loaf</li>
+    <li>Olive oil</li>
+    <li>Kosher salt and freshly ground black pepper</li>
+    <li>1 lemon, halved</li>
+            <!-- Add other ingredients here -->
+        </ul>
+    </div>
+
+    <!-- Another Divider Line -->
+    <div class="divider-line"></div>
+
+    <!-- Additional Recipe Instructions -->
+    <div class="additional-instructions">
+        <p>Make the ricotta: Line a fine-mesh or other tiny-holed strainer with a layer or two of cheesecloth and set it over a large bowl with enough clearance that the bottom of the strainer won’t touch the bowl once it has 4 cups of liquid in it, or the cheese won’t drain. In a heavy medium-large saucepan, heat the milk, cream, and salt over medium-high heat until just below a simmer — it will look like it’s foaming and register just below 200°F. Remove the pot from the heat and stir in lemon juice. Let it sit for 5 minutes, then pour it through the cheesecloth. Drain for 10 minutes, or until it’s a nice soft ricotta consistency, and up to 10 minutes longer if needed. [The amount of time it takes to drain has to do with the size of your cheesecloth holes.] Transfer ricotta to a bowl to serve. Drizzle with olive oil, and finish with salt and pepper.</p><br>
+
+<p>Grill the bread and vegetables: Brush or drizzle your vegetables and bread with olive oil. I grill my vegetables, even small ones, directly on my grill grates at fairly high heat but I know there are baskets that might lead to fewer falling in, I’m just stubborn. Grill the vegetables, bread, and lemon halves until they’re lightly charred underneath (depending on how robust your grill is, this could take 2 to 6 minutes), then flip the vegetables and bread and cook on the second side. Season with the vegetables with salt and pepper and transfer everything to a serving platter.</p><br>
+
+<p>Serve: Right before serving, drizzle everything with additional olive oil, squeeze at least one lemon half over the vegetables (leave the second half on the platter), and season with additional salt and pepper. You could also drizzle some balsamic vinegar over, or keep it on the side.</p><br>
+
+<p>Do ahead: Leftover ricotta is not a thing that exists, but it theoretically keeps for 3 days in the fridge.</p><br>
+
+<p>A few items I’m using here: Reusable cheesecloth, which I even run through the washing machine, this glass pot, this little burner, and this oval platter.</p>
+<footer>
+        <div class="footer-content">
+            <p>&copy; 2024 Smitten Kitchen. All rights reserved.</p>
+        </div>
+        
+    </footer>    
+    
+</body>
+</html>

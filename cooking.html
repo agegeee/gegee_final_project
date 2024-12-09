@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Website Header</title>
+    <link rel="stylesheet" href="styles.css"> <!-- Link to your CSS file -->
+    <link rel="stylesheet" href="cooking.css"> <!-- Link to your CSS file -->
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <!-- Header Section -->
+    <div class="header">
+        <!-- Left Side (Logo) -->
+        <div class="logo-container">
+            <img src="img/logo2.jpg" alt="Logo" class="logo-image">
+        </div>
+
+        <!-- Centered Title and Navigation -->
+        <div class="center-content">
+            <h1 class="title">Smitten Kitchen</h1>
+            <nav class="navbar">
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li class="menu-item">
+                        <a href="recipes.html">Recipes</a>
+                        <ul class="dropdown">
+                            <li><a href="spring/spring.html">Spring</a></li>
+                            <li><a href="summer/summer.html">Summer</a></li>
+                            <li><a href="fall/fall.html">Fall</a></li>
+                            <li><a href="winter/winter.html">Winter</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="contact.html">Contact</a></li>
+                    <li><a href="cooking.html">What Am I Cooking Today?</a></li>
+                </ul>
+            </nav>
+        </div>
+
+        <!-- Right Side (Social Media Icons) -->
+        <div class="social-media">
+            <a href="https://www.facebook.com/smittenkitchen" target="_blank">
+                <img src="img/facebook-logo.png" alt="Facebook" class="social-icon">
+            </a>
+            <a href="https://www.instagram.com/smittenkitchen" target="_blank">
+                <img src="img/instagram-logo.png" alt="Instagram" class="social-icon">
+            </a>
+            <a href="https://www.youtube.com/smittenkitchening" target="_blank">
+                <img src="img/youtube-logo.png" alt="YouTube" class="social-icon">
+            </a>
+            <a href="https://www.pinterest.com/smittenkitchen/" target="_blank">
+                <img src="img/pinterest-logo.png" alt="Pinterest" class="social-icon">
+            </a>
+            <a href="https://x.com/smittenkitchen" target="_blank">
+                <img src="img/x-logo.png" alt="X" class="social-icon">
+            </a>
+        </div>
+    </div>
+    <div class="saved-recipes-container">
+        <h1>Saved Recipes</h1>
+        <div id="saved-recipes"></div>
+    </div>
+    
+    <script>
+        // Retrieve and display saved recipes
+        function loadSavedRecipes() {
+            const savedRecipes = JSON.parse(localStorage.getItem('savedRecipes')) || [];
+            const savedRecipesContainer = document.getElementById('saved-recipes');
+        
+            // Clear any existing content
+            savedRecipesContainer.innerHTML = '';
+        
+            // Loop through recipes and create HTML for each
+            savedRecipes.forEach((recipe, index) => {
+                const recipeDiv = document.createElement('div');
+                recipeDiv.classList.add('recipe-item');
+                recipeDiv.innerHTML = `
+                    <a href="${recipe.url}">
+                        <h2>${recipe.title}</h2>
+                        <img src="${recipe.imageSrc}" alt="${recipe.title}" class="recipe-image">
+                    </a>
+                    <button class="remove-recipe" onclick="removeRecipe(${index})">Remove</button>
+                `;
+                savedRecipesContainer.appendChild(recipeDiv);
+            });
+        }
+    
+        // Remove recipe by index
+        function removeRecipe(index) {
+            let savedRecipes = JSON.parse(localStorage.getItem('savedRecipes')) || [];
+        
+            // Remove the recipe at the specified index
+            savedRecipes.splice(index, 1);
+        
+            // Save the updated list back to localStorage
+            localStorage.setItem('savedRecipes', JSON.stringify(savedRecipes));
+        
+            // Reload the recipes to reflect the change
+            loadSavedRecipes();
+        }
+    
+        // Load recipes when the page loads
+        document.addEventListener('DOMContentLoaded', loadSavedRecipes);
+    </script>
+    
+    
+    <footer>
+        <div class="footer-content">
+            <p>&copy; 2024 Smitten Kitchen. All rights reserved.</p>
+        </div>
+    </footer>    
+    
+</body>
+</html>

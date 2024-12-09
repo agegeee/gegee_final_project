@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Website Header</title>
+    <link rel="stylesheet" href="../styles.css"> <!-- Link to your CSS file -->
+    <link rel="stylesheet" href="forrecipe.css">
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body class="fall-page">
+
+    <!-- Header Section -->
+    <div class="header">
+        <!-- Left Side (Logo) -->
+        <div class="logo-container">
+            <img src="../img/logo2.jpg" alt="Logo" class="logo-image">
+        </div>
+
+        <!-- Centered Title and Navigation -->
+        <div class="center-content">
+            <h1 class="title">Smitten Kitchen</h1>
+            <nav class="navbar">
+                <ul>
+                    <li><a href="../index.html">Home</a></li>
+                    <li><a href="../about.html">About</a></li>
+                    <li class="menu-item">
+                        <a href="recipes.html">Recipes</a>
+                        <ul class="dropdown">
+                            <li><a href="spring.html">Spring</a></li>
+                            <li><a href="../summer/summer.html">Summer</a></li>
+                            <li><a href="../fall/fall.html">Fall</a></li>
+                            <li><a href="../winter/winter.html">Winter</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="../contact.html">Contact</a></li>
+                    <li><a href="../cooking.html">What Am I Cooking Today?</a></li>
+                </ul>
+            </nav>
+        </div>
+
+        <!-- Right Side (Social Media Icons) -->
+        <div class="social-media">
+            <a href="https://www.facebook.com/smittenkitchen" target="_blank">
+                <img src="../img/facebook-logo.png" alt="Facebook" class="social-icon">
+            </a>
+            <a href="https://www.instagram.com/smittenkitchen" target="_blank">
+                <img src="../img/instagram-logo.png" alt="Instagram" class="social-icon">
+            </a>
+            <a href="https://www.youtube.com/smittenkitchening" target="_blank">
+                <img src="../img/youtube-logo.png" alt="YouTube" class="social-icon">
+            </a>
+            <a href="https://www.pinterest.com/smittenkitchen/" target="_blank">
+                <img src="../img/pinterest-logo.png" alt="Pinterest" class="social-icon">
+            </a>
+            <a href="https://x.com/smittenkitchen" target="_blank">
+                <img src="../img/x-logo.png" alt="X" class="social-icon">
+            </a>
+        </div>
+    </div>
+
+    <!-- Main Content Section -->     
+    <div class="content-container">
+        <div class="recipe-instructions">
+            <div class="title-with-button">
+                <h1 class="recipe-title">Cranberry pecan bread</h1>
+                <button class="save-recipe" onclick="saveRecipe()">Save</button>
+            </div>
+            <p>Last week, in a continued effort to get my fridge back to inbox zero after it was groaning under the weight of the extraneous contents of a few shoots here this fall, I decided to take my surplus of cranberries, oranges, and pecans and turn them into a cranberry bread. Except — wait — I don’t have a recipe for cranberry bread. Why did you guys let me go 15 years without a cranberry bread recipe on this site? How did I go 1300 recipes deep in the archives and never find my forever version of one of most classic late fall recipes everyone deserves in their repertoire? Let’s fix this right now.</p>
+        </div>
+    </div> 
+    <script>
+        function saveRecipe() {
+            // Get the recipe title, image URL, and the relative URL of the current page
+            const title = document.querySelector('.recipe-title').innerText;
+            const imageSrc = document.querySelector('.recipe-image').src;
+            const url = window.location.pathname;  // Get the relative URL of the current page
+        
+            // Create a recipe object with title, imageSrc, and relative URL
+            const recipe = { title, imageSrc, url };
+        
+            // Get existing recipes from localStorage
+            let savedRecipes = JSON.parse(localStorage.getItem('savedRecipes')) || [];
+        
+            // Add the new recipe
+            savedRecipes.push(recipe);
+        
+            // Save the updated list back to localStorage
+            localStorage.setItem('savedRecipes', JSON.stringify(savedRecipes));
+        
+            alert('Recipe saved!');
+        }
+    </script>
+      
+    <div class="image-container">
+        <img src="../img/fallrecipe3.webp" alt="Recipe Image" class="recipe-image">
+    </div>
+    <div class="divider-line"></div>
+
+    <!-- Ingredients Section -->
+    <div class="ingredients-container">
+        <h2 class="ingredients-title">INGREDIENTS</h2>
+        <ul class="ingredients-list">
+            <li>3/4 cup (85 grams) pecans</li>
+  <li>1 cup (200 grams) granulated sugar</li>
+  <li>2 medium-to-large oranges, any variety</li>
+  <li>6 tablespoons (85 grams) unsalted butter, melted, cooled</li>
+  <li>1/2 to 2/3 cup (120 to 160 grams) sour cream or plain yogurt</li>
+  <li>1 large egg</li>
+  <li>1 teaspoon kosher salt</li>
+  <li>1 teaspoon baking powder</li>
+  <li>1/2 teaspoon baking soda</li>
+  <li>2 cups (8 ounces or 225 grams) fresh or frozen cranberries, halved</li>
+  <li>2 cups (260 grams) all-purpose flour</li>
+  <li>Pearl sugar (about 1½ tablespoons), to finish</li>
+            <!-- Add other ingredients here -->
+        </ul>
+    </div>
+
+    <!-- Another Divider Line -->
+    <div class="divider-line"></div>
+
+    <!-- Additional Recipe Instructions -->
+    <div class="additional-instructions">
+        <p>Heat oven to 350°F. If your pecans are untoasted or if they’re labeled toasted but don’t taste very crisp or toasty, toast them now. Place pecans on a small baking sheet in the oven for 6 to 8 minutes, or until they smell fragrant. Remove and roughly chop, then set aside.</p>
+
+<p>Coat a loaf pan (8½ by 4½ or 6-cup volume) with butter or nonstick spray. For easier removal, you can line the bottom and two long sides with a sling of parchment paper.</p>
+
+<p>Place sugar in a large bowl, and zest oranges into it. Use your fingertips to rub the zest into the sugar, breaking it up a bit and releasing more fragrance.</p>
+
+<p>Cut oranges in half and juice them into a 1-cup measure; I get between 1/3 and 1/2 cup. Spoon in sour cream until the juice reaches the 1-cup line; whisk to combine.</p>
+
+<p>Whisk butter and egg into zest-sugar mixture. Whisk in orange juice-sour cream mixture. Sprinkle surface of batter with salt, baking powder, and baking soda and whisk thoroughly into the batter. Scrape the bowl down. Stir in cranberries and pecans. Stir in flour until it just disappears.</p>
+
+<p>Scrape batter into prepared pan and spread smooth. Sprinkle cake with pearl sugar, if using.</p>
+
+<p>Bake for 60 to 70 minutes, rotating once for even color, until a toothpick inserted into the loaf comes out batter-free. Give the cake more time if needed; don’t worry about it getting dark. Cool in pan on a rack until lukewarm, or at room temperature. Serve in slices.</p>
+
+<p>Cake keeps for 5 to 6 days at room temperature. I leave it in the loaf pan, and just cover the cut side with foil. This ensures the sides stay moist and the top stays crisp.</p>
+
+<p>Notes:</p>
+
+<p>Deb, this is a cake: I know, I know. In America, we have things called “bread” or “quickbread” that are definitely actually cake but called bread because they’re in loaf pans and sliced like sandwich bread. They do tend to be a bit more muffin-y: less sweet, denser crumb, and with much more fruit or vegetable than a birthday cake would have. But in case you were wondering if this is cake: yes, it essentially is.</p>
+
+<p>Cranberries: I’ve made this with whole cranberries (seemed too big) and roughly chopped cranberries (felt they disappeared too much) and really like them halved the most here. It takes a few minutes but I think it’s worth it.</p>
+
+<p>Nuts: Yes, you can skip the pecans. You can use another nut, too. I promise it’s good with or without the nuts.</p>
+
+<p>What can I add instead of nuts? I didn’t actually test this (see above: turns out I like nuts here!), but I was thinking of adding 1 cup white chocolate chunks instead of the nuts. Again, you could also use nothing but cranberries and it will still be delicious.</p>
+
+<p>What is pearl sugar? Sometimes sold as nib or hail sugar, Hagelzucker, pärlsocker, perlesukker, sucre en grains and more, pearl sugar is a magical white sugar that looks boulder-like but has a very soft crunch. It’s an essential ingredient in Liege Waffles, which you should also make this holiday season, and it shows up on Chouquettes (Sugar Puffs), and decoratively on SK on my Apple and Honey Challah and Braided Lemon Bread. I love it as a festive decorative sugar. I bought a single bag a decade ago and don’t think I’ll ever use it up. It keeps forever. I’ve found it online innumerable places such as Amazon, King Arthur Flour, and I’m sure any local baking supply store. I’ve read that you can make imitation pearl sugar from crushed sugar cubes, but I think that’s better for when the pieces aren’t being used decoratively, as they are here.</p>
+
+<p>Does this need pearl sugar on top? Absolutely not. It’s for crunch and decoration. Coarse sugar, or none at all, will also work.</p>
+
+
+        <footer>
+        <div class="footer-content">
+            <p>&copy; 2024 Smitten Kitchen. All rights reserved.</p>
+        </div>
+        
+    </footer>    
+    
+</body>
+</html>

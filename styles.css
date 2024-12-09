@@ -1,0 +1,230 @@
+/* General Header Styling */
+body {
+    font-family: "Times New Roman", Times, serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    background-color: #6B7794; /* Background color */
+ }
+ 
+  
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #6B7794; /* Adjust the background color */
+    padding: 20px;
+}
+
+.logo-container {
+    flex: 1;
+}
+
+.logo-image {
+    width: 50px; /* Adjust the size of the logo */
+    height: auto;
+}
+
+.center-content {
+    text-align: center;
+    flex: 2;
+}
+
+.title {
+    font-size: 30px; /* Adjust the title size */
+    margin: 0;
+    font-family: 'Cinzel', serif; /* You can adjust the font */
+    color: white; /* This will change the title color to white */
+    margin-bottom: 30px;
+}
+
+.navbar ul {
+    list-style-type: none;
+    margin: 10px 0 0;
+    padding: 0;
+    font-style: 'Times';
+}
+
+.navbar ul li {
+    display: inline;
+    margin: 0 15px; /* Space between links */
+}
+
+.navbar ul li a {
+    text-decoration: none;
+    color: #ffffff; /* Adjust the color of the links */
+    font-size: 18px; /* Adjust the font size */
+}
+
+.social-media {
+    flex: 1;
+    text-align: right;
+}
+
+.social-icon {
+    width: 20px; /* Adjust icon size */
+    height: auto;
+    margin-left: 10px;
+}
+
+/* Background Image */
+.background-image {
+    background-color: #6B7794; /* Light background for contrast */
+    padding: 50px 0;
+    text-align: center;
+}
+
+.bg-image {
+    width: 100%; /* Ensure the image fills the width of the container */
+    height: auto; /* Adjust height based on the width to maintain aspect ratio */
+    max-height: 100vh; 
+}
+
+/* Quote Section Styling */
+.quote-section {
+    padding: 30px;
+    text-align: center;
+    font-style: italic;
+    font-size: 40px;
+    color: #ffffff;
+    max-width: 600px;
+    margin: 0 auto;
+    margin-top: 100px; /* Add spacing above the quote */
+    margin-bottom: 10px; /* Add spacing below the quote */
+}
+
+blockquote {
+    border-left: 5px solid #333;
+    padding-left: 15px;
+}
+
+/* Ensure the dropdown list is hidden by default */
+.navbar ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+.navbar li {
+    position: relative;
+}
+
+.navbar .menu-item:hover .dropdown {
+    display: block; /* Show the dropdown when hovering */
+}
+
+/* Style the dropdown menu */
+.dropdown {
+    display: none; /* Hide the dropdown initially */
+    position: absolute;
+    background-color: #333;
+    border: 1px solid #333;
+    min-width: 160px;
+    padding: 10px 0;
+    top: 100%; /* Position dropdown below the "Recipes" menu */
+    left: 0;
+    z-index: 1;
+}
+
+/* Style the links inside the dropdown */
+.dropdown a {
+    color: #333;
+    padding: 10px 20px;
+    text-decoration: none;
+    display: block;
+}
+
+.dropdown a:hover {
+    background-color: #f4f4f4;
+}
+
+/* Optional: Add some spacing to your navbar items */
+.navbar li a {
+    padding: 10px;
+    text-decoration: none;
+    color: #333;
+}
+
+.navbar li a:hover {
+    background-color: #686767;
+}
+
+
+/* Ensure the header is responsive */
+@media (max-width: 768px) {
+    .header {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .navbar ul {
+        margin-top: 10px;
+    }
+
+    .navbar ul li {
+        display: block;
+        margin: 5px 0;
+    }
+
+    .social-media {
+        text-align: center;
+        margin-top: 15px;
+    }
+
+    .quote-section {
+        font-size: 18px;
+    }
+}
+footer {
+    background-color: transparent; /* Matches the site's background */
+    color: white; /* Footer text color */
+    padding: 20px 0; /* Space inside the footer */
+    text-align: center;
+    font-size: 14px; /* Adjust text size for aesthetics */
+}
+
+footer:before {
+    content: '';
+    display: block;
+    height: 1px;
+    width: 90%; /* Adjust width of the line */
+    background-color: white; /* Separator line color */
+    margin: 0 auto 20px; /* Center the line with space below */
+}
+.random-recipe-section {
+    text-align: center;
+    padding: 20px;
+    background-color: #f8f8f8;
+    margin: 20px;
+    border-radius: 8px;
+}
+
+#random-recipe-btn {
+    background-color: #f08c00;
+    color: white;
+    padding: 12px 20px;
+    font-size: 16px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+#random-recipe-btn:hover {
+    background-color: #e07800;
+}
+
+#recipe-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* This will center the image horizontally */
+    justify-content: center; /* This will center the content vertically */
+    text-align: center; /* Optional: Centers the text */
+    margin: 0 auto; /* Optional: Ensures the container is centered within its parent */
+}
+
+#recipe-image {
+    display: block; /* Makes the image behave like a block element */
+    margin: 10px 0; /* Adds some spacing above and below the image */
+    max-width: 100%; /* Ensures the image doesn't overflow the container */
+    height: auto; /* Keeps the image's aspect ratio intact */
+}

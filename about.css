@@ -1,0 +1,207 @@
+/* General Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* About Page Layout */
+.about-content {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 40px;
+    gap: 30px;
+}
+
+/* Image Container */
+.image-container img {
+    width: 500px;
+    height: auto;
+    margin-left: 45px;
+    padding-bottom: 50px;
+}
+
+/* Text Container */
+.text-container h1 {
+    font-family: 'Cinzel', sans-serif;
+    font-size: 36px;
+    color: white;
+    margin-bottom: 20px;
+    margin-left: 40px;
+}
+
+.text-container p {
+    font-family: "Times New Roman", Times, serif;
+    font-size: 18px;
+    color: white;
+    line-height: 1.6;
+    margin-left: 40px;
+}
+
+/* Content Container */
+.content-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    width: 90%;
+    margin: 0 auto;
+}
+
+/* Title Styling */
+.cinzel-title {
+    font-family: 'Cinzel', serif;
+    color: white;
+    margin: 0;
+    padding-top: 100px;
+}
+
+/* Right Side Content */
+.content-right {
+    width: 48%;
+}
+
+/* Text Styling */
+.times-new-roman-text {
+    font-family: 'Times New Roman', serif;
+    font-size: 18px;
+    color: white;
+    padding-top: 100px;
+    line-height: 1.6;
+}
+
+/* Border Line */
+.border-line {
+    border-bottom: 2px solid #ccc;
+    width: 90%;
+    margin: 20px auto;
+    padding-bottom: 100px;
+}
+
+/* Reversed Content Container */
+.content-container-reversed {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    width: 80%;
+    margin: 0 auto;
+}
+
+/* Left Side Content */
+.content-left {
+    width: 48%;
+}
+
+/* Bullet Points Styling */
+.bullet-points {
+    font-family: 'Times New Roman', serif;
+    padding-left: 20px;
+    font-size: 18px;
+    color: white;
+    padding-top: 100px;
+    line-height: 1.6;
+}
+
+/* Cinzel Title for Reversed Layout */
+.title-container-reversed {
+    width: 48%;
+    text-align: right;
+}
+
+/* Cinzel Title Styling */
+.cinzel-title {
+    font-family: 'Cinzel', serif;
+    margin: 0;
+}
+
+/* Media Queries for Responsiveness */
+
+/* For Tablets and Smaller Screens (Mobile) */
+@media screen and (max-width: 1024px) {
+    /* Keep the existing styles intact for larger screens */
+    .about-content {
+        flex-direction: column; /* Stack image and text vertically */
+        align-items: center;
+    }
+
+    /* Keep the image at its default size but responsive */
+    .image-container img {
+        width: 100%;
+        max-width: 400px; /* Resize image to fit smaller screens */
+        margin-left: 0;
+    }
+
+    .text-container h1 {
+        font-size: 28px; /* Slightly smaller font size for smaller screens */
+        margin-left: 0;
+    }
+
+    .text-container p {
+        font-size: 16px; /* Smaller text for readability */
+        margin-left: 0;
+    }
+
+    /* Stack content vertically on smaller screens */
+    .content-container, .content-container-reversed {
+        flex-direction: column; 
+        align-items: center;
+        width: 100%;
+    }
+
+    .content-right, .content-left {
+        font-size: 28px; /* Slightly smaller font size for smaller screens */
+        margin-left: 0;
+    }
+
+    .cinzel-title {
+        font-size: 30px; /* Slightly smaller title size */
+        padding-top: 60px;
+    }
+
+    .border-line {
+        padding-bottom: 60px; /* Reduce space below the line */
+    }
+
+    .bullet-points {
+        padding-left: 10px;
+    }
+    .title-container-reversed {
+        order: -1; /* Ensure the title appears above the text */
+    }
+}
+
+/* For Smaller Phones */
+@media screen and (max-width: 768px) {
+    .image-container img {
+        width: 100%;
+        max-width: 300px; /* Smaller image for very small screens */
+    }
+
+    .text-container h1 {
+        font-size: 24px; /* Further reduce font size for mobile */
+    }
+
+    .text-container p {
+        font-size: 14px; /* Adjust font size for readability on mobile */
+    }
+
+    .content-right, .content-left {
+        font-size: 14px; /* Slightly smaller font size for smaller screens */
+        margin-left: 0;
+    }
+
+    .cinzel-title {
+        font-size: 24px;
+    }
+
+    .bullet-points {
+        font-size: 16px;
+    }
+
+    .border-line {
+        padding-bottom: 40px;
+    }
+    .title-container-reversed {
+        order: -1; /* Ensure the title appears above the text */
+    }
+}
